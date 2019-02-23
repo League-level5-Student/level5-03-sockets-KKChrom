@@ -52,6 +52,7 @@ public class Client {
 	public void sendClick() {
 		try {
 			if (os != null) {
+				String s = JOptionPane.showInputDialog("Message to server");
 				os.writeObject("CLICK SENT FROM CLIENT");
 				os.flush();
 			}

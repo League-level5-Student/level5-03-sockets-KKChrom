@@ -1,6 +1,9 @@
 package _01_Intro_To_Sockets.server;
 
 import java.net.*;
+
+import javax.swing.JOptionPane;
+
 import java.io.*;
 
 public class ServerGreeter extends Thread {
@@ -21,12 +24,13 @@ public class ServerGreeter extends Thread {
 			while(b)
 			{
 				try {
-					System.out.println("Server is waiting for a client to connect");
+					JOptionPane.showMessageDialog(null, "Server is waiting for a client to connect");
 					Socket s = ss.accept();
 					ss = ss;
-					System.out.println("Client has connected");
+					JOptionPane.showMessageDialog(null,"Client has connected");
 					DataInputStream i = (DataInputStream) s.getInputStream();
 					 i.readUTF();
+					 
 					 DataOutputStream d = (DataOutputStream) s.getOutputStream();
 					 d.writeUTF("shh");
 					 s.close();
